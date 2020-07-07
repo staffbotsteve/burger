@@ -47,23 +47,10 @@ console.log(data)
   });
 });
 
-// Create a new plan
-// app.put("/api/burgers", function(req, res) {
-//   connection.query("UPDATE INTO plans (plan) VALUES (?)", [req.body.plan], function(err, result) {
-//     if (err) {
-//       return res.status(500).end();
-//     }
-
-//     // Send back the ID of the new plan
-//     res.json({ id: result.insertId });
-//     console.log({ id: result.insertId });
-//   });
-// });
-
-// Update a plan
+// Update a burger
 app.put("/api/burgers/", function(req, res) {
 console.log(req.body);
-  connection.query("UPDATE burgers SET eaten = ? WHERE id = ?", [1, req.body.id], function(err, result) {
+  connection.query("UPDATE burgers SET devoured = ? WHERE id = ?", [1, req.body.id], function(err, result) {
     if (err) {
       // If an error occurred, send a generic server failure
       return res.status(500).end();
